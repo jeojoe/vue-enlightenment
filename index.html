@@ -8,12 +8,31 @@
   <div id="app">
     {{ message }}
   </div>
+  
+  <div id="app2">
+    <span v-bind:title="msg">Yo man welcome to this futuristic shit.</span>
+  </div>
 
+  <div id="app3">
+    <div v-if="seen">Yoooo</div>
+  </div>
   <script type="text/javascript">
     var app = new Vue({
       el: '#app',
       data: {
         message: 'Hello World, Vue or Whatever !',
+      },
+    })
+    var app2 = new Vue({
+      el: '#app2',
+      data: {
+        msg: 'Wow it\'s ' + new Date()
+      },
+    })
+    var app3 = new Vue({
+      el: '#app3',
+      data: {
+        seen: true,
       },
     })
   </script>
