@@ -16,13 +16,13 @@ var app = new Vue({
     },
     attack: function() {
       // Random damages
-      const heroDamages = Math.floor(Math.random() * 10);
-      const monsterDamages = Math.floor(Math.random() * 10);
+      const heroDamages = Math.ceil(Math.random() * 10);
+      const monsterDamages = Math.ceil(Math.random() * 10);
       // Calculate Life
       this.calculateLife(heroDamages, monsterDamages);
     },
     powerAttack: function() {
-
+      
     },
     heal: function() {
 
