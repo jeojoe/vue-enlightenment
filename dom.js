@@ -48,13 +48,21 @@ var domApp3 = new Vue({
   computed: {
     output: function() {
       console.log('computed');
-      return this.counter > 10 ? 'Greater than 10' : 'Smaller than 10';
+      return this.counter;
+    }
+  },
+  watch: {
+    counter: function() {
+      var dis = this;
+      setTimeout(function() {
+        dis.counter = 0;
+      }, 2000);
     }
   },
   methods: {
     render: function() {
       console.log('methods');
-      return this.dummyCounter > 10 ? 'Greater than 10' : 'Smaller than 10';
+      return this.dummyCounter;
     }
   }
 })
