@@ -55,6 +55,16 @@
     </p>
     <input type="text" v-on:keyup.enter.space="alertYo" />
   </div>
+  
+  <div id="dom-app3">
+    <input type="text" v-model="name" />
+    <p>{{ name }}</p>
+    <button v-on:click="counter++">increase</button>
+    <button v-on:click="dummyCounter++">increase dummy</button>
+    <p>{{ output }}</p>
+    <p>{{ render() }}</p>
+  </div>
+
   <script src="basic.js"></script>
   <script src="dom.js"></script>
 </body>

@@ -37,3 +37,24 @@ var domApp2 = new Vue({
     },
   },
 })
+
+var domApp3 = new Vue({
+  el: '#dom-app3',
+  data: {
+    name: 'jeojoe',
+    counter: 0,
+    dummyCounter: 0,
+  },
+  computed: {
+    output: function() {
+      console.log('computed');
+      return this.counter > 10 ? 'Greater than 10' : 'Smaller than 10';
+    }
+  },
+  methods: {
+    render: function() {
+      console.log('methods');
+      return this.dummyCounter > 10 ? 'Greater than 10' : 'Smaller than 10';
+    }
+  }
+})
