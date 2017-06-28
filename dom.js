@@ -31,6 +31,9 @@ var domApp2 = new Vue({
     },
     prohibitmousemove: function(e) {
       e.stopPropagation();
-    }
+    },
+    alertYo: function(e) {
+      alert('Yo');
+    },
   },
 })

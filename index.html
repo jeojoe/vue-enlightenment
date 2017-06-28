@@ -52,6 +52,7 @@
       <span v-on:mousemove.prevent="">NO MOUSEMOVE EVENT HERE! (prevent) - </span>
       <span v-on:mousemove="prohibitmousemove">NO MOUSEMOVE EVENT HERE TOO!</span>
     </p>
+    <input type="text" v-on:keyup.enter.space="alertYo" />
   </div>
   <script src="basic.js"></script>
   <script src="dom.js"></script>
