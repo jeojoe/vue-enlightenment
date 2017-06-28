@@ -3,6 +3,7 @@
 <head>
   <title>Hi vue</title>
   <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" type="text/css" href="css/dom.css">
 </head>
 <body>
   <div id="app">
@@ -63,6 +64,19 @@
     <button v-on:click="dummyCounter++">increase dummy</button>
     <p>{{ output }}</p>
     <p>{{ render() }}</p>
+  </div>
+  
+  <div id="dom-app4">
+    <div
+      class="box" :class="{red: isRed}"
+      @click="isRed = !isRed"
+    ></div>
+    <div class="box" :class="divClass"></div>
+    <div class="box" :class="[color, {red: isRed}]"></div>
+    <div class="box" :style="{'background-color': color}"></div>
+    <div class="box" :style="myStyle"></div>
+    <input type="text" v-model="color" />
+    <input type="text" v-model="width" />
   </div>
 
   <script src="basic.js"></script>

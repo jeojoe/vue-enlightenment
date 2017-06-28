@@ -66,3 +66,26 @@ var domApp3 = new Vue({
     }
   }
 })
+
+var domApp4 = new Vue({
+  el: '#dom-app4',
+  data: {
+    isRed: false,
+    color: 'green',
+    width: '150',
+  },
+  computed: {
+    divClass: function() {
+      return {
+        red: this.isRed,
+        blue: !this.isRed,
+      }
+    },
+    myStyle: function() {
+      return {
+        'background-color': this.color,
+        width: this.width + 'px',
+      };
+    }
+  }
+})
