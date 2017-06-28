@@ -22,7 +22,11 @@ var app = new Vue({
       this.calculateLife(heroDamages, monsterDamages);
     },
     powerAttack: function() {
-      
+      // Random power damages
+      const heroDamages = Math.ceil(Math.random() * 50);
+      const monsterDamages = Math.ceil(Math.random() * 50);
+      // Calculate Life
+      this.calculateLife(heroDamages, monsterDamages);
     },
     heal: function() {
 
