@@ -59,10 +59,10 @@
       <ul>
         <template v-for="status in statuses">
           <li class="hero">
-            Hero's attack power is {{ status.effectOnHero }}.
+            {{ status.hero }}.
           </li>
           <li class="monster">
-            Monster's attack power is {{ status.effectOnMonster }}.
+            {{ status.monster }}.
           </li>
         </template>
         <li class="win" v-if="winner">

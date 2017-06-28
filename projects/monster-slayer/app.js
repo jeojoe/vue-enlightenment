@@ -34,7 +34,7 @@ var app = new Vue({
     giveUp: function() {
 
     },
-    calculateLife: function(effectOnHero, effectOnMonster) {
+    calculateLife: function(effectOnMonster, effectOnHero) {
       let hasWinner = false;
       let heroLife_left = this.heroLife;
       let monsterLife_left = this.monsterLife;
@@ -66,8 +66,9 @@ var app = new Vue({
       }
 
       this.statuses.push({
-        effectOnHero: effectOnHero,
-        effectOnMonster: effectOnMonster,
+        hero: effectOnMonster < 0 ?
+          'Hero\'s attack is ' + effectOnMonster : 'Hero is healed for ' + effectOnMonster,
+        monster: 'Monster\'s attack is ' + effectOnHero,
       });
 
       if (hasWinner) {
