@@ -1,0 +1,68 @@
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bar-wrapper {
+  display: inline-block;
+  width: 40%;
+  margin: 30px 2.5%;
+}
+
+.bar {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #aaa;
+}
+
+.bar-progress {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+}
+
+.bar-progress-label {
+  position: absolute;
+  top: 0;
+  left: 45%;
+}
+
+.control-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.control-wrapper .btn {
+  height: 20px;
+  display: inline-block;
+  padding: 20px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px #eee;
+}
+
+#start-btn {
+  background-color: green;
+}
+
+#attack-btn {
+  background-color: orange;
+}
+
+#power-attack-btn {
+  background-color: red;
+}
+
+#heal-btn {
+  background-color: green;
+}
+
+#giveup-btn {
+  background-color: #555;
+}

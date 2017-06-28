@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Monster Slayer</title>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Bar -->
+    <div>
+      <div class="bar-wrapper">
+        <h1>You</h1>
+        <div class="bar">
+          <p class="bar-progress-label">{{ heroScore }}</p>
+          <div id="hero-bar" class="bar-progress">
+          </div>
+        </div>
+      </div>
+      <div class="bar-wrapper">
+        <h1>Monster</h1>
+        <div class="bar">
+          <p class="bar-progress-label">{{ monsterScore }}</p>
+          <div id="monster-bar" class="bar-progress">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="control-wrapper">
+      <!-- If-else isPlaying -->
+      <template v-if="isPlaying">
+        <div class="btn" id="attack-btn" @click="attack">
+          Attack
+        </div>
+        <div class="btn" id="power-attack-btn" @click="powerAttack">
+          Power Attack
+        </div>
+        <div class="btn" id="heal-btn" @click="heal">
+          Heal
+        </div>
+        <div class="btn" id="giveup-btn" @click="giveUp">
+          Give Up
+        </div>
+      </template>
+      <template v-else="isPlaying">
+        <div
+          id="start-btn" class="btn"
+          @click="startNewGame"
+        >
+          Start New Game
+        </div>
+      </template>
+    </div>
+
+    <!-- Result -->
+    <div class="result-wrapper">
+
+    </div>
+
+  </div>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
