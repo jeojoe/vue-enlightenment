@@ -66,3 +66,22 @@
 #giveup-btn {
   background-color: #555;
 }
+
+.status-wrapper li {
+  list-style: none;
+  text-align: center;
+  padding: 10px 0;
+  color: #fff;
+}
+
+.status-wrapper .hero {
+  background-color: blue;
+}
+
+.status-wrapper .monster {
+  background-color: red;
+}
+
+.status-wrapper .win {
+  background-color: green;
+}

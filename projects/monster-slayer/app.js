@@ -5,7 +5,7 @@ var app = new Vue({
     monsterLife: 0,
     isPlaying: false,
     winner: '',
-    status: [], // [ { heroDamages, monsterDamages } ]
+    statuses: [], // [ { heroDamages, monsterDamages } ]
   },
   methods: {
     startNewGame: function() {
@@ -15,7 +15,6 @@ var app = new Vue({
       this.winner = '';
     },
     attack: function() {
-      console.log('sdhsdjfn');
       // Random damages
       const heroDamages = Math.floor(Math.random() * 10);
       const monsterDamages = Math.floor(Math.random() * 10);
@@ -62,7 +61,7 @@ var app = new Vue({
         this.monsterLife = monsterLife_left;
       }
 
-      this.status.push({
+      this.statuses.push({
         heroDamages: heroDamages,
         monsterDamages: monsterDamages,
       });

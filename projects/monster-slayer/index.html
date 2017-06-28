@@ -54,9 +54,21 @@
       </template>
     </div>
 
-    <!-- Result -->
-    <div class="result-wrapper">
-
+    <!-- Status -->
+    <div class="status-wrapper">
+      <ul>
+        <template v-for="status in statuses">
+          <li class="hero">
+            Hero's attack power is {{ status.heroDamages }}.
+          </li>
+          <li class="monster">
+            Monster's attack power is {{ status.monsterDamages }}.
+          </li>
+        </template>
+        <li class="win" v-if="winner">
+          {{ winner }} has won !!! ({{ heroLife }} vs. {{ monsterLife }})
+        </li>
+      </ul>
     </div>
 
   </div>
