@@ -93,6 +93,11 @@ var domApp4 = new Vue({
 var domApp5 = new Vue({
   el: '#dom-app5',
   data: {
+    persons: [
+      { name: 'k', age: 10 },
+      { name: 'l', age: 20 },
+    ],
+    items: ['yo', 'yay'],
     show: true,
   },
 })
