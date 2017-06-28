@@ -95,12 +95,13 @@
       </template>
     </ul>
     <ul>
-      <li v-for="person in persons">
+      <li v-for="person in persons" :key="person.name">
         <span v-for="(value, key, index) in person">
           {{ key }}: {{ value }} 
         </span>
       </li>
     </ul>
+    <span v-for="i in 10">{{ i }}</span>
   </div>
 
   <script src="basic.js"></script>
