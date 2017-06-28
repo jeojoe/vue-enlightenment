@@ -29,5 +29,8 @@ var domApp2 = new Vue({
       this.x = e.clientX;
       this.y = e.clientY;
     },
+    prohibitmousemove: function(e) {
+      e.stopPropagation();
+    }
   },
 })

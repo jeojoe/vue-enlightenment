@@ -46,7 +46,12 @@
   <div id="dom-app2">
     <button v-on:click="increment(2, $event)">Up</button>
     <p>{{ counter }}</p>
-    <p v-on:mousemove="updateCoordinates">Mouse now at: {{ x }} / {{ y }}</p>
+    <p v-on:mousemove="updateCoordinates">
+      Mouse now at: {{ x }} / {{ y }} - 
+      <span v-on:mousemove.stop="">NO MOUSEMOVE EVENT HERE! (stop)- </span>
+      <span v-on:mousemove.prevent="">NO MOUSEMOVE EVENT HERE! (prevent) - </span>
+      <span v-on:mousemove="prohibitmousemove">NO MOUSEMOVE EVENT HERE TOO!</span>
+    </p>
   </div>
   <script src="basic.js"></script>
   <script src="dom.js"></script>
