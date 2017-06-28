@@ -45,7 +45,8 @@
 
   <div id="dom-app2">
     <button v-on:click="increment(2, $event)">Up</button>
-    <p>{{ counter }}</p>
+    <button v-on:click="counter++">Up</button>
+    <p>{{ counter * 2 > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
     <p v-on:mousemove="updateCoordinates">
       Mouse now at: {{ x }} / {{ y }} - 
       <span v-on:mousemove.stop="">NO MOUSEMOVE EVENT HERE! (stop)- </span>
