@@ -10,7 +10,7 @@
   </div>
   
   <div id="app2">
-    <span v-bind:title="msg">Yo man welcome to this futuristic shit.</span>
+    <span :title="msg">Yo man welcome to this futuristic shit.</span>
   </div>
 
   <div id="app3">
@@ -49,7 +49,7 @@
     <p>{{ counter * 2 > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
     <p v-on:mousemove="updateCoordinates">
       Mouse now at: {{ x }} / {{ y }} - 
-      <span v-on:mousemove.stop="">NO MOUSEMOVE EVENT HERE! (stop)- </span>
+      <span @mousemove.stop="">NO MOUSEMOVE EVENT HERE! (stop)- </span>
       <span v-on:mousemove.prevent="">NO MOUSEMOVE EVENT HERE! (prevent) - </span>
       <span v-on:mousemove="prohibitmousemove">NO MOUSEMOVE EVENT HERE TOO!</span>
     </p>
