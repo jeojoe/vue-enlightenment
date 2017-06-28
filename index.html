@@ -43,6 +43,11 @@
     <div v-html="finishedLink"></div>
   </div>
 
+  <div id="dom-app2">
+    <button v-on:click="increment(2, $event)">Up</button>
+    <p>{{ counter }}</p>
+    <p v-on:mousemove="updateCoordinates">Mouse now at: {{ x }} / {{ y }}</p>
+  </div>
   <script src="basic.js"></script>
   <script src="dom.js"></script>
 </body>
