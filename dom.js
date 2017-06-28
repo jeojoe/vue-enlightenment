@@ -89,3 +89,10 @@ var domApp4 = new Vue({
     }
   }
 })
+
+var domApp5 = new Vue({
+  el: '#dom-app5',
+  data: {
+    show: true,
+  },
+})

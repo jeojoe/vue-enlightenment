@@ -79,6 +79,14 @@
     <input type="text" v-model="width" />
   </div>
 
+  <div id="dom-app5">
+    <template v-if="show">
+      <p>Yo!</p>
+      <h1>Nah..</h1>
+    </template>
+    <button @click="show = !show">Toggle</button>
+  </div>
+
   <script src="basic.js"></script>
   <script src="dom.js"></script>
 </body>
