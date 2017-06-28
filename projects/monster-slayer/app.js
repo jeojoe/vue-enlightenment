@@ -5,7 +5,7 @@ var app = new Vue({
     monsterLife: 0,
     isPlaying: false,
     winner: '',
-    statuses: [], // [ { heroDamages, monsterDamages } ]
+    statuses: [], // [ { effectOnHero, effectOnMonster } ]
   },
   methods: {
     startNewGame: function() {
@@ -19,14 +19,14 @@ var app = new Vue({
       const heroDamages = Math.ceil(Math.random() * 10);
       const monsterDamages = Math.ceil(Math.random() * 10);
       // Calculate Life
-      this.calculateLife(heroDamages, monsterDamages);
+      this.calculateLife(-heroDamages, -monsterDamages);
     },
     powerAttack: function() {
       // Random power damages
       const heroDamages = Math.ceil(Math.random() * 50);
       const monsterDamages = Math.ceil(Math.random() * 50);
       // Calculate Life
-      this.calculateLife(heroDamages, monsterDamages);
+      this.calculateLife(-heroDamages, -monsterDamages);
     },
     heal: function() {
 
@@ -34,13 +34,13 @@ var app = new Vue({
     giveUp: function() {
 
     },
-    calculateLife: function(heroDamages, monsterDamages) {
+    calculateLife: function(effectOnHero, effectOnMonster) {
       let hasWinner = false;
       let heroLife_left = this.heroLife;
       let monsterLife_left = this.monsterLife;
 
-      heroLife_left -= monsterDamages;
-      monsterLife_left -= heroDamages;
+      heroLife_left += effectOnHero;
+      monsterLife_left += effectOnMonster;
       // console.log(heroLife, monsterLife);
       if (heroLife_left <= 0 && monsterLife_left <= 0) {
         this.heroLife = 0;
@@ -66,8 +66,8 @@ var app = new Vue({
       }
 
       this.statuses.push({
-        heroDamages: heroDamages,
-        monsterDamages: monsterDamages,
+        effectOnHero: effectOnHero,
+        effectOnMonster: effectOnMonster,
       });
 
       if (hasWinner) {
