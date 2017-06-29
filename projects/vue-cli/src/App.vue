@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <app-server-status></app-server-status>
+    <app-servers></app-servers>
     <ul>
       <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
       <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
