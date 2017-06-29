@@ -13,6 +13,7 @@ var app = new Vue({
       this.heroLife = 100;
       this.monsterLife = 100;
       this.winner = '';
+      this.statuses = [];
     },
     attack: function() {
       // Random damages
@@ -35,9 +36,9 @@ var app = new Vue({
       // Calculate Life
       this.calculateLife(heroHealing, -monsterDamages, 'healing');
     },
-    giveUp: function() {
+    // giveUp: function() {
 
-    },
+    // },
     calculateLife: function(effectOnMonster, effectOnHero, healing) {
       let hasWinner = false;
       let heroLife_left = this.heroLife;
