@@ -104,7 +104,13 @@
     <span v-for="i in 10">{{ i }}</span>
   </div>
 
+  <div id="instance-app1">
+    <h1>{{ text }}</h1>
+    <button @click="text = 'Updated'">Update Text</button>
+    <button @click="destroy">Destroy Text</button>
+  </div>
   <script src="basic.js"></script>
   <script src="dom.js"></script>
+  <script src="instance.js"></script>
 </body>
 </html>
