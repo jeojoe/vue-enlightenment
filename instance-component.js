@@ -34,3 +34,17 @@ var instanceApp1 = new Vue({
     },
   },
 })
+
+Vue.component('my-cmp', {
+  data: function() {
+    return {
+      text: 'This is text',
+    };
+  },
+  template: '<p>{{ text }}</p>',
+})
+
+new Vue({
+  el: '#component-app1',
+})
+
