@@ -35,13 +35,18 @@ var instanceApp1 = new Vue({
   },
 })
 
+var data = { text: 'This is text' };
+
 Vue.component('my-cmp', {
   data: function() {
-    return {
-      text: 'This is text',
-    };
+    return data;
   },
-  template: '<p>{{ text }}</p>',
+  template: '<p>{{ text }} (<button @click="changeText">change</button>)</p>',
+  methods: {
+    changeText: function() {
+      this.text = 'DSFSDF';
+    },
+  },
 })
 
 new Vue({
