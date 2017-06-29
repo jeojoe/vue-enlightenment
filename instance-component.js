@@ -37,7 +37,7 @@ var instanceApp1 = new Vue({
 
 var data = { text: 'This is text' };
 
-Vue.component('my-cmp', {
+var cmp = {
   data: function() {
     return data;
   },
@@ -47,9 +47,12 @@ Vue.component('my-cmp', {
       this.text = 'DSFSDF';
     },
   },
-})
+};
 
 new Vue({
   el: '#component-app1',
+  components: {
+    'my-cmp': cmp,
+  },
 })
 
