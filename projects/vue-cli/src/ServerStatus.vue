@@ -20,3 +20,9 @@
     },
   }
 </script>
+
+<style type="text/css" scoped>
+  div {
+    border: 1px solid red;
+  }
+</style>
