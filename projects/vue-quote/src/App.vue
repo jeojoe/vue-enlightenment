@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <MainProgress :count="quotes.length"></MainProgress>
-    <MainInput></MainInput>
+    <MainInput :addQuote="addQuote"></MainInput>
     <QuoteWrapper :quotes="quotes"></QuoteWrapper>
   </div>
 </template>
@@ -22,6 +22,20 @@ export default {
     };
   },
   components: { MainProgress, MainInput, QuoteWrapper },
+  methods: {
+    addQuote: function(quote) {
+      // Check max quote
+      if (this.quotes.length >= 10) {
+        alert('Reach Max !');
+        return;
+      }
+      // Add quote and increase id
+      this.quotes.push({
+        id: this.id, text: quote,
+      });
+      this.id++;
+    }
+  }
 }
 </script>
 

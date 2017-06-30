@@ -1,9 +1,28 @@
 <template>
-  <p>template</p>
+  <div>
+    <input
+      v-model="quoteText"
+      placeholder="Insert Quote Here!"
+      @keyup.enter="addQuote(quoteText)"
+    />
+    {{ quoteText }}
+  </div>
 </template>
 
 <script type="text/javascript">
-  
+  export default {
+    props: {
+      addQuote: {
+        type: Function,
+        required: true,
+      },
+    },
+    data: function() {
+      return {
+        quoteText: '',
+      };
+    },
+  }  
 </script>
 
 <style type="text/css">
