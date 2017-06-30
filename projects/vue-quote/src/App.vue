@@ -23,7 +23,7 @@ export default {
   },
   components: { MainProgress, MainInput, QuoteWrapper },
   methods: {
-    addQuote: function(quote) {
+    addQuote(quote) {
       // Check max quote
       if (this.quotes.length >= 10) {
         alert('Reach Max !');
@@ -34,7 +34,7 @@ export default {
         id: this.id, text: quote,
       });
       this.id++;
-    }
+    },
   }
 }
 </script>

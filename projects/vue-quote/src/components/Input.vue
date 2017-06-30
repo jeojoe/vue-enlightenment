@@ -3,7 +3,7 @@
     <input
       v-model="quoteText"
       placeholder="Insert Quote Here!"
-      @keyup.enter="addQuote(quoteText)"
+      @keydown.enter="addQuote(quoteText)"
     />
     {{ quoteText }}
   </div>
