@@ -2,7 +2,7 @@
   <div id="app">
     <MainProgress :count="quotes.length"></MainProgress>
     <MainInput></MainInput>
-    <QuoteWrapper></QuoteWrapper>
+    <QuoteWrapper :quotes="quotes"></QuoteWrapper>
   </div>
 </template>
 
@@ -14,7 +14,10 @@ import QuoteWrapper from './components/QuoteWrapper.vue';
 export default {
   data: function() {
     return {
-      quotes: [],
+      quotes: [
+        { id: 0, text: 'first quote bitch' },
+      ],
+      id: 1,
       max: 10,
     };
   },

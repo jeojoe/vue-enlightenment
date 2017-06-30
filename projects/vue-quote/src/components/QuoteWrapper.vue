@@ -1,8 +1,11 @@
 <template>
   <div>
     <p>QuoteWrapper</p>
-    <quote></quote>
-    <quote></quote>
+    <Quote v-for="(quote, index) in quotes"
+      :quote="quote"
+      :index="index"
+      :key="quote.id"
+    ></Quote>
   </div>
 </template>
 
@@ -10,9 +13,8 @@
 import Quote from './Quote.vue';
 
 export default {
-  components: {
-    'quote': Quote,
-  }
+  props: ['quotes'],
+  components: { Quote },
 }
 </script>
 
