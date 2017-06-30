@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Server Status : {{ status }}</p>
+    <p>Server Status : {{ propString }}</p>
     <button @click="changeStatus">change status</button>
     <p>{{ displayName() }}</p>
     <p>{{ propNumber }}</p>
@@ -21,14 +21,9 @@
         };
       },
     },
-    data: function() {
-      return {
-        status: 'Critical',
-      };
-    },
     methods: {
       changeStatus() {
-        this.status = 'Normal';
+        this.$emit('nameWasReset', 'Yooooo');
       },
       displayName() {
         return this.propString.split('').reverse().join("");

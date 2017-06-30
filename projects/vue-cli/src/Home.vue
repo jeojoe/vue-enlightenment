@@ -1,6 +1,7 @@
 <template>
   <div>
-    <server-status v-for="server in 5" propString="James"></server-status>
+    <p>{{ status }}</p>
+    <server-status :propString="status" @nameWasReset="status = $event"></server-status>
   </div>
 </template>
 
@@ -8,6 +9,11 @@
   import ServerStatus from './ServerStatus.vue';
 
   export default {
+    data: function() {
+      return {
+        status: 'Critical',
+      };
+    },
     components: {
       'server-status': ServerStatus,
     },
