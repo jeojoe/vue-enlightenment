@@ -1,6 +1,6 @@
 <template>
   <div>
-    <server-status v-for="server in 5"></server-status>
+    <server-status v-for="server in 5" propString="James"></server-status>
   </div>
 </template>
 

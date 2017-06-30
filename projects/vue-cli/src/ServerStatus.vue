@@ -2,12 +2,25 @@
   <div>
     <p>Server Status : {{ status }}</p>
     <button @click="changeStatus">change status</button>
-    <a>Hey</a>
+    <p>{{ displayName() }}</p>
+    <p>{{ propNumber }}</p>
   </div>
 </template>
 
 <script>
   export default {
+    props: {
+      propString: String,
+      propNumber: {
+        type: Number,
+        default: 0,
+      },
+      propObject: function() {
+        return {
+          yo: 'yo',
+        };
+      },
+    },
     data: function() {
       return {
         status: 'Critical',
@@ -17,6 +30,9 @@
       changeStatus() {
         this.status = 'Normal';
       },
+      displayName() {
+        return this.propString.split('').reverse().join("");
+      }
     },
   }
 </script>
