@@ -2,14 +2,19 @@
   <div id="app">
     <MainProgress :count="quotes.length"></MainProgress>
     <MainInput :addQuote="addQuote"></MainInput>
-    <QuoteWrapper :quotes="quotes"></QuoteWrapper>
+    <!-- <QuoteWrapper :quotes="quotes"></QuoteWrapper> -->
+    <Quote v-for="(quote, index) in quotes"
+      :quote="quote"
+      :index="index"
+      :key="quote.id"
+    ></Quote>
   </div>
 </template>
 
 <script>
 import MainProgress from './components/Progress.vue';
 import MainInput from './components/Input.vue';
-import QuoteWrapper from './components/QuoteWrapper.vue';
+import Quote from './components/Quote.vue';
 
 export default {
   data: function() {
@@ -21,7 +26,7 @@ export default {
       max: 10,
     };
   },
-  components: { MainProgress, MainInput, QuoteWrapper },
+  components: { MainProgress, MainInput, Quote },
   methods: {
     addQuote(quote) {
       // Check max quote
@@ -35,6 +40,14 @@ export default {
       });
       this.id++;
     },
+    deleteQuote(id) {
+      for (i in this.quotes) {
+        if (this.quotes[i].id === id) {
+          this.quotes.splice(i, 1);
+          break;
+        }
+      }
+    }
   }
 }
 </script>
