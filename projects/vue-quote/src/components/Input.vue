@@ -5,7 +5,6 @@
       placeholder="Insert Quote Here!"
       @keydown.enter="addQuote(quoteText)"
     />
-    {{ quoteText }}
   </div>
 </template>
 

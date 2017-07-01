@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <MainProgress :count="quotes.length"></MainProgress>
+    <MainProgress :count="quotes.length" :max="max"></MainProgress>
     <MainInput :addQuote="addQuote"></MainInput>
     <!-- <QuoteWrapper :quotes="quotes"></QuoteWrapper> -->
     <Quote v-for="(quote, index) in quotes"
       :quote="quote"
       :index="index"
       :key="quote.id"
+      :deleteQuote="deleteQuote"
     ></Quote>
   </div>
 </template>
@@ -30,7 +31,7 @@ export default {
   methods: {
     addQuote(quote) {
       // Check max quote
-      if (this.quotes.length >= 10) {
+      if (this.quotes.length >= this.max) {
         alert('Reach Max !');
         return;
       }
@@ -41,7 +42,7 @@ export default {
       this.id++;
     },
     deleteQuote(id) {
-      for (i in this.quotes) {
+      for (let i = 0; i < this.quotes.length; i++) {
         if (this.quotes[i].id === id) {
           this.quotes.splice(i, 1);
           break;
